@@ -4,10 +4,6 @@
     "username": "Admin",
     "password": "123",
     "role": "Admin"
-  },
-  {
-    "username": "User",
-    "password": "12345"
   }
 ]
 }

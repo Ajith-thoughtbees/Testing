@@ -17,12 +17,12 @@ getlogins(){
   return this.http.get<login[]>('http://localhost:3000/login')
 }
 
-editlogins(data:any,id:number){
-  return this.http.put<any>('http://localhost:3000/posts/' +id,data)
-}
+// editlogins(data:any,id:number){
+//   return this.http.put<any>('http://localhost:3000/posts/' +id,data)
+// }
 
-deletelogins(id: string){
-  return this.http.delete('http://localhost:3000/posts' + '/' +id)
-}
+// deletelogins(id: string){
+//   return this.http.delete('http://localhost:3000/posts' + '/' +id)
+// }
 
 }
