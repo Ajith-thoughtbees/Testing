@@ -1,0 +1,18 @@
+<div>
+<p *ngIf="display" @inOutPaneAnimation>
+    Start editing to see some magic happen :)
+  </p>
+  <p *ngFor="let l of lines" @inOutPaneAnimation>
+    {{ l }}
+  </p>
+  <button class="button" (click)="display = !display">Animate</button>
+  <button class="button button2" (click)="addLine()">Add line</button>
+  <button class="button button3" (click)="removeLine()">Remove line</button>
+
+  <h3>Change the div size</h3>
+  <button  class="button button4" (click)="changeState()">Change Size</button>
+  <br />
+  <br />
+  <div [@changeDivSize]=currentState></div>
+  <br />
+</div>

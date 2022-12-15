@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -6,11 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  @Input() inputValue = '';
 
-  text: string = 'User Page';
+  @Output() msg: EventEmitter<string> = new EventEmitter<string>();
+
+  text : string = 'User Page';
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
+  emitMessage() {
+    this.msg.emit('This is emitted message');
+   }
+
 }
+

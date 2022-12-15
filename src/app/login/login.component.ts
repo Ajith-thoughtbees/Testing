@@ -10,27 +10,28 @@ import { ApiService } from '../service/api.service';
 })
 export class LoginComponent implements OnInit{
 
+
   username : string = '';
   password : string = '';
-  role:string="";
+  role:any;
   loginForm!: FormGroup;
   eId: any;
+  formData: any;
 
   constructor(private  api:ApiService , private route : Router, private formBuilder:FormBuilder ) {
 
   }
 
   ngOnInit(): void {
-
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
-
   });
 }
-get f() { return this.loginForm.controls; }
 
 login() {
+  this.formData = this.loginForm.value;  console.log(this.loginForm.value);
+
   this.api.getlogins().subscribe({ next:(res)=>{
         const adm = res.find((a:any)=>{
           return a.username === this.loginForm.value.username && a.password === this.loginForm.value.password && a.role === "Admin"

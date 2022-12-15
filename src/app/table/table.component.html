@@ -1,0 +1,18 @@
+<p-table [value]="products">{{products| json}}
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-products>
+        <tr for>
+            <td>{{products.code}}</td>
+            <td>{{products.name}}</td>
+            <td>{{products.category}}</td>
+            <td>{{products.quantity}}</td>
+        </tr>
+    </ng-template>
+</p-table>

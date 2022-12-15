@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
 
   text: string = 'Contact Page';
+  isVisible = false;
   
   constructor() { }
 

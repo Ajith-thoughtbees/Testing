@@ -20,4 +20,9 @@ describe('AboutComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should return value', () => {
+    expect(component.clickHandler('foo')).toEqual(true);
+    expect(component.clickHandler('bar')).not.toEqual(true);
+    })
 });

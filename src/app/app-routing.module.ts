@@ -7,6 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { AnimationComponent } from './animation/animation.component';
+import { CustomElementComponent } from './custom-element/custom-element.component';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -16,6 +22,12 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'users', component: UserComponent },
+  { path: 'parent', component: ParentComponent },
+  { path: 'child', component: ChildComponent },
+  { path: 'animation', component: AnimationComponent},
+  { path:'custom',component:CustomElementComponent},
+  { path: 'content', component: ContentProjectionComponent},
+  { path:'table', component: TableComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 

@@ -1,14 +1,17 @@
+<div class="body">
 <div id="content">
   <h1>Welcome!</h1>
   <form action="" [formGroup]="loginForm" >
       <div class="input-bar">
         <label for="username">Username</label>
-          <input type="text" id="username" class="input-border" [ngClass]="{'correct': username.length > 0,'error': username.length === 0}" formControlName="username" [(ngModel)]="username">
+          <input type="text" id="username" class="input-border" [ngClass]="{'correct': username.length > 0,'error': username.length === 0}" formControlName="username" >
       </div>
       <div class="input-bar">
           <label for="password">password</label>
-          <input type="password" [ngClass]="{'correct': password.length > 0,'error': password.length === 0}" id="password" class="input-border"  formControlName="password" [(ngModel)]="password">
+          <input type="password" [ngClass]="{'correct': password.length > 0,'error': password.length === 0}" id="password" class="input-border"  formControlName="password">
       </div>
   </form>
   <button type="submit" id="btn" (click)="login()">Login</button>
 </div>
+</div>
+

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA, Injector } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorpageComponent } from './errorpage/errorpage.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { AnimationComponent } from './animation/animation.component';
+import { CustomElementComponent } from './custom-element/custom-element.component';
+import { createCustomElement } from '@angular/elements';
+import { ContentProjectionComponent } from './content-projection/content-projection.component';
+import { TableComponent } from './table/table.component';
+import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -21,15 +31,33 @@ import { ErrorpageComponent } from './errorpage/errorpage.component';
     UserComponent,
     LoginComponent,
     DashboardComponent,
-    ErrorpageComponent
+    ErrorpageComponent,
+    ParentComponent,
+    ChildComponent,
+    AnimationComponent,
+    ContentProjectionComponent,
+    TableComponent,
+    // CustomElementComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ButtonModule,
+    TableModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CustomElementComponent],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private injector: Injector) {
+    const customElement = createCustomElement(CustomElementComponent, { injector:this.injector});
+    customElements.define('custom-element', customElement);
+}
+}
+
