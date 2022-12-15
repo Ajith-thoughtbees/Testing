@@ -13,6 +13,7 @@ import { AnimationComponent } from './animation/animation.component';
 import { CustomElementComponent } from './custom-element/custom-element.component';
 import { ContentProjectionComponent } from './content-projection/content-projection.component';
 import { TableComponent } from './table/table.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path:'custom',component:CustomElementComponent},
   { path: 'content', component: ContentProjectionComponent},
   { path:'table', component: TableComponent},
+  { path:'dragDrop', component: DragDropComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full'}
 ];
 

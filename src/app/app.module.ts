@@ -21,6 +21,8 @@ import { ContentProjectionComponent } from './content-projection/content-project
 import { TableComponent } from './table/table.component';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
+import {DragDropModule} from 'primeng/dragdrop';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,7 @@ import {TableModule} from 'primeng/table';
     AnimationComponent,
     ContentProjectionComponent,
     TableComponent,
+    DragDropComponent,
     // CustomElementComponent
   ],
   imports: [
@@ -46,7 +49,8 @@ import {TableModule} from 'primeng/table';
     HttpClientModule,
     BrowserAnimationsModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

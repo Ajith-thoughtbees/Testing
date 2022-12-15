@@ -11,8 +11,5 @@ import { products } from '../table/table.model';
 
     getProducts(){
         return this.http.get<any>('http://192.168.200.116:3000/products')
-        .toPromise()
-        .then(res => <products[]>res.data)
-        .then(data => { return data; });
     }
  }

@@ -15,7 +15,7 @@ export class TableComponent implements OnInit {
   }
 
   getProducts(){
-    this.productService.getProducts().then(data => {this.products = data
+    this.productService.getProducts().subscribe(data => {this.products = data
     console.log(data);
     });
 

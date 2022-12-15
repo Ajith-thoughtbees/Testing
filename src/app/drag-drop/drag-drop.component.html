@@ -1,0 +1,6 @@
+<div *ngFor="let color of colors" pDraggable="color"  (onDragStart)="dragStart($event,color)"
+ (onDragEnd)="dragEnd($event)">	{{color}}</div>
+
+<div class="drop" pDroppable="color"  (onDrop)="drop($event)">
+    <div *ngFor="let c of droped">{{c}}</div>
+  </div>
